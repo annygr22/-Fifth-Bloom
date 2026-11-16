@@ -1,6 +1,7 @@
 
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,14 +18,16 @@
 
 <body>
 
+    <!-- CABEÇALHO -->
     <header class="header">
         <div class="header-container">
 
+            <!-- LOGO -->
             <a href="index.html" class="logo">
                 <img src="assets/logo_Fifth_Blom.png" alt="Logo Fifth Bloom">
             </a>
 
-            <!-- Menu de navegação -->
+            <!-- MENU DE NAVEGAÇÃO -->
             <nav class="main-nav" id="main-nav">
                 <a href="index.html" class="nav-link active">Início</a>
                 <a href="produtos.html" class="nav-link">Produtos</a>
@@ -33,10 +36,10 @@
                 <a href="favoritos.html" class="nav-link">Favoritos</a>
             </nav>
 
-            <!-- Ações do cabeçalho -->
+            <!-- AÇÕES DO CABEÇALHO -->
             <div class="header-actions">
 
-                <!-- Pesquisa -->
+                <!-- PESQUISA -->
                 <form class="search-box" id="search-form">
                     <input
                         type="search"
@@ -53,7 +56,7 @@
                     </button>
                 </form>
 
-                <!-- SACOLA: coloque a imagem em assets/sacola.png -->
+                <!-- SACOLA -->
                 <a href="sacola.html" class="icon-link sacola-link"
                    aria-label="Sacola de compras">
 
@@ -66,7 +69,7 @@
                     <span class="contador-sacola" id="contador-sacola">0</span>
                 </a>
 
-                <!-- PERFIL: coloque a imagem em assets/perfil_fundo_transparente.png -->
+                <!-- PERFIL -->
                 <a href="perfil.html" class="profile-link">
 
                     <img
@@ -80,14 +83,210 @@
 
             </div>
 
+            <!-- MENU HAMBÚRGUER -->
             <button class="hamburguer" id="btn-menu">☰</button>
-               
 
         </div>
     </header>
 
-    <!-- Arquivo JavaScript -->
-    <script src="script.js"></script>
+
+    <!-- CONTEÚDO PRINCIPAL DA PÁGINA INICIAL -->
+    <main class="home-destaques">
+
+        <!-- BANNER PRINCIPAL -->
+        <section class="banner-principal">
+
+            <div class="banner-conteudo">
+                <h1>BELEZA QUE FLORESCE DE DENTRO PARA FORA.</h1>
+
+                <span class="linha-decorativa"></span>
+
+                <p>
+                    Maquiagem e autocuidado para realçar
+                    o que te faz única.
+                </p>
+
+                <a href="produtos.html" class="botao-banner">
+                    COMPRAR AGORA <span>»</span>
+                </a>
+            </div>
+
+        </section>
+
+
+        <!-- PRODUTO EM DESTAQUE -->
+        <section class="produto-destaque">
+
+            <img src="./assets/OS MAIS AMADOS.png" alt="Produto Fifth Bloom">
+
+            <div class="destaque-texto">
+                <span>OS MAIS AMADOS</span>
+                <p>FAVORITO</p>
+                <span>✦</span>
+            </div>
+
+            <div class="carrossel-indicadores">
+                <span class="ativo"></span>
+                <span></span>
+                <span></span>
+            </div>
+
+        </section>
+
+
+        <!-- MAIS AMADOS -->
+        <section class="mais-amados">
+
+            <div class="titulo-secao">
+                <h2>MAIS AMADOS</h2>
+                <a href="produtos.html">VER TODOS →</a>
+            </div>
+
+            <div class="lista-produtos">
+
+                <article class="produto-item">
+                    <img src="./assets/SÉRUM OURO.png" alt="Sérum ouro">
+
+                    <div class="produto-info">
+                        <h3>SÉRUM OURO</h3>
+                        <p>Sérum nutritivo com ação antioxidante que ajuda a restaurar a vitalidade da pele.</p>
+                        <strong>R$ 49,90</strong>
+                        <span class="estrelas">★★★★★ <small>(120)</small></span>
+                    </div>
+                </article>
+
+                <article class="produto-item">
+                    <img src="./assets/ÓLEO FACIAL.png" alt="Óleo facial">
+
+                    <div class="produto-info">
+                        <h3>ÓLEO FACIAL</h3>
+                        <p>Óleo nutritivo que hidrata profundamente sem pesar.</p>
+                        <strong>R$ 39,90</strong>
+                        <span class="estrelas">★★★★★ <small>(120)</small></span>
+                    </div>
+                </article>
+
+                <article class="produto-item">
+                    <img src="./assets/CREME ANTIDADE.png" alt="Creme antidade">
+
+                    <div class="produto-info">
+                        <h3>CREME ANTIDADE</h3>
+                        <p>Creme facial desenvolvido para suavizar linhas finas e melhorar a elasticidade da pele.</p>
+                        <strong>R$ 89,90</strong>
+                        <span class="estrelas">★★★★★ <small>(120)</small></span>
+                    </div>
+                </article>
+
+                <article class="produto-item">
+                    <img src="./assets/ESFOLIANTE CORPORAL.png" alt="Esfoliante corporal">
+
+                    <div class="produto-info">
+                        <h3>ESFOLIANTE CORPORAL</h3>
+                        <p>Remove células mortas e impurezas, deixando a pele mais lisa e renovada.</p>
+                        <strong>R$ 109,90</strong>
+                        <span class="estrelas">★★★★★ <small>(120)</small></span>
+                    </div>
+                </article>
+
+            </div>
+
+            <a href="produtos.html" class="ver-produtos">
+                VER TODOS OS PRODUTOS <span>→</span>
+            </a>
+
+        </section>
+
+
+        <!-- PROMOÇÕES E BENEFÍCIOS -->
+        <section class="coluna-promocoes">
+
+            <div class="promocao">
+
+                <h2>PROMOÇÕES</h2>
+
+                <div class="promocao-banner">
+                    <h3>ATÉ 30% OFF</h3>
+                    <p>em produtos selecionados</p>
+                    <a href="promocoes.html">APROVEITAR »»</a>
+                </div>
+
+            </div>
+
+            <div class="beneficios">
+
+                <div class="beneficio-item">
+                    <span>♧</span>
+                    <div>
+                        <h3>FRETE GRÁTIS</h3>
+                        <p>em compras acima de R$149</p>
+                    </div>
+                </div>
+
+                <div class="beneficio-item">
+                    <span>♧</span>
+                    <div>
+                        <h3>BELEZA COM PROPÓSITO</h3>
+                        <p>Produtos cruelty free</p>
+                    </div>
+                </div>
+
+                <div class="beneficio-item">
+                    <span>▤</span>
+                    <div>
+                        <h3>COMPRA SEGURA</h3>
+                        <p>Seus dados protegidos</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- RODAPÉ -->
+    <footer class="rodape-home">
+
+        <div class="newsletter">
+            <h3>NEWSLETTER</h3>
+            <p>Receba novidades e promoções exclusivas</p>
+
+            <form>
+                <input type="email" placeholder="Seu e-mail" required>
+                <button type="submit">→</button>
+            </form>
+        </div>
+
+        <div class="redes-sociais">
+            <h3>SIGA A FIFTH BLOOM</h3>
+
+            <div class="redes-icones">
+                <a href="#" aria-label="Instagram">◎</a>
+                <a href="#" aria-label="TikTok">♪</a>
+                <a href="#" aria-label="YouTube">▶</a>
+                <a href="#" aria-label="Pinterest">℗</a>
+            </div>
+        </div>
+
+        <div class="pagamentos">
+            <h3>FORMAS DE PAGAMENTO</h3>
+
+            <div class="pagamento-icones">
+                <span>VISA</span>
+                <span>●●</span>
+                <span>PIX</span>
+                <span>AMEX</span>
+                <span>Pay</span>
+            </div>
+        </div>
+
+    </footer>
+
+
+
+    <!-- ARQUIVO JAVASCRIPT -->
+    <script src="./js/script.js"></script>
 
 </body>
 </html>
