@@ -748,3 +748,161 @@ body {
 }
 
 
+/* ÁREA DE LOGIN */
+
+.area-login {
+    min-height: 650px;
+    padding: 60px 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* TROQUE A IMAGEM NESTE LOCAL */
+    background-image: url("assets/fundo-login.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.painel-login {
+    width: 100%;
+    max-width: 430px;
+    padding: 40px;
+
+    background: rgba(255, 255, 255, 0.96);
+
+    border: 1px solid #E5E5E5;
+    border-radius: 12px;
+
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.10);
+}
+
+.logo-painel {
+    width: 125px;
+    margin-bottom: 20px;
+}
+
+.painel-login h1 {
+    font-size: 28px;
+    color: #1C1C1C;
+    margin-bottom: 8px;
+}
+
+.painel-login > p {
+    color: #686568;
+    font-size: 13px;
+}
+
+#form-login {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-top: 25px;
+}
+
+#form-login label {
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+#form-login input {
+    height: 48px;
+    padding: 0 14px;
+    border: 1px solid #E5E5E5;
+    border-radius: 6px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.recuperar {
+    text-align: right;
+    margin: 10px 0 22px;
+    font-size: 12px;
+    color: #686568;
+    text-decoration: none;
+}
+
+.continuar {
+    height: 48px;
+    background: #1C1C1C;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+
+.continuar:hover {
+    background: #E8B4B8;
+    color: #1C1C1C;
+}
+
+.divisor {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 25px 0;
+}
+
+.divisor span {
+    flex: 1;
+    height: 1px;
+    background: #E5E5E5;
+}
+
+.divisor p {
+    font-size: 11px;
+}
+
+.google {
+    width: 100%;
+    height: 48px;
+    background: white;
+    border: 1px solid #E5E5E5;
+    border-radius: 6px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+}
+
+.google img {
+    width: 19px;
+    height: 19px;
+}
+
+.criar-conta {
+    margin-top: 25px;
+    font-size: 12px;
+}
+
+.criar-conta a,
+.termos a {
+    color: #1C1C1C;
+    font-weight: 600;
+}
+
+.termos {
+    margin-top: 22px;
+    font-size: 10px !important;
+    line-height: 1.8;
+}
+
+@media (max-width: 600px) {
+    .area-login {
+        padding: 35px 15px;
+    }
+
+    .painel-login {
+        padding: 30px 22px;
+    }
+}
+
+
