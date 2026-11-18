@@ -1,0 +1,262 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Produtos | FIFTH BLOOM</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="produtos.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- BARRA DE FRETE -->
+    <div class="barra-frete">
+        FRETE GRÁTIS em compras acima de R$149
+    </div>
+
+
+    <!-- CABEÇALHO -->
+    <header class="cabecalho">
+
+        <!-- LOGO -->
+        <a href="index.html" class="logo">
+            <img src="assets/logo_Fifth_Blom.png" alt="Fifth Bloom">
+        </a>
+
+
+        <!-- MENU MOBILE -->
+        <input type="checkbox" id="menu-toggle">
+
+        <label for="menu-toggle" class="menu-mobile">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+
+
+        <!-- NAVEGAÇÃO -->
+        <nav class="menu-navegacao">
+
+            <a href="index.html">INÍCIO</a>
+
+            <a href="produtos.html" class="pagina-ativa">
+                PRODUTOS
+            </a>
+
+            <a href="lancamentos.html">LANÇAMENTOS</a>
+
+            <a href="promocoes.html">PROMOÇÕES</a>
+
+            <a href="sobre.html">SOBRE NÓS</a>
+
+        </nav>
+
+
+        <!-- AÇÕES DO CABEÇALHO -->
+        <div class="acoes-cabecalho">
+
+            <!-- PESQUISA -->
+            <a href="produtos.html" class="acao-pesquisa">
+
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <circle cx="10.8" cy="10.8" r="6.8"></circle>
+                    <path d="M16 16 L21 21"></path>
+                </svg>
+
+                <span>PESQUISAR</span>
+
+            </a>
+
+
+            <!-- SACOLA -->
+            <a href="sacola.html" class="acao-sacola" aria-label="Sacola">
+
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M5 8h14l1 13H4L5 8Z"></path>
+                    <path d="M9 9V6a3 3 0 0 1 6 0v3"></path>
+                </svg>
+
+                <span class="contador-sacola" id="contadorSacola">0</span>
+
+            </a>
+
+
+            <!-- PERFIL -->
+            <a href="login.html" class="acao-perfil">
+
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <circle cx="12" cy="8" r="3.5"></circle>
+                    <path d="M5 21c0-4 2.8-6.5 7-6.5s7 2.5 7 6.5"></path>
+                </svg>
+
+                <span>PERFIL</span>
+
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- CONTEÚDO DA PÁGINA -->
+    <main class="pagina-produtos">
+
+        <section class="titulo-produtos">
+
+            <h1>PRODUTOS</h1>
+
+            <p>
+                PRODUTOS FEITOS PARA REALÇAR SUA BELEZA NATURAL.
+            </p>
+
+        </section>
+
+
+        <div class="conteudo-produtos">
+
+            <!-- FILTROS LATERAIS -->
+            <aside class="filtros">
+
+                <h3>Categorias</h3>
+
+                <label>
+                    <input type="checkbox" value="skincare">
+                    Skincare
+                </label>
+
+                <label>
+                    <input type="checkbox" value="corpo">
+                    Corpo
+                </label>
+
+                <label>
+                    <input type="checkbox" value="maquiagem">
+                    Maquiagem
+                </label>
+
+                <label>
+                    <input type="checkbox" value="hidratantes">
+                    Hidratantes
+                </label>
+
+                <label>
+                    <input type="checkbox" value="mais-vendidos">
+                    Mais vendidos
+                </label>
+
+
+                <hr>
+
+
+                <h3>Preço</h3>
+
+                <label>
+                    <input type="checkbox" name="preco" value="0-50">
+                    R$0 – R$50
+                </label>
+
+                <label>
+                    <input type="checkbox" name="preco" value="50-100">
+                    R$50 – R$100
+                </label>
+
+                <label>
+                    <input type="checkbox" name="preco" value="100">
+                    R$100+
+                </label>
+
+
+                <button class="limpar-filtros" type="button"
+                    onclick="limparFiltros()">
+                    LIMPAR FILTROS
+                </button>
+
+            </aside>
+
+
+            <!-- PRODUTOS -->
+            <section class="catalogo">
+
+                <div class="ordenacao">
+
+                    <label for="ordenar">Ordenar por:</label>
+
+                    <select id="ordenar">
+                        <option value="padrao">Padrão</option>
+                        <option value="menor">Menor preço</option>
+                        <option value="maior">Maior preço</option>
+                        <option value="nome">Nome</option>
+                    </select>
+
+                </div>
+
+
+                <div class="grade-produtos" id="gradeProdutos">
+
+                    <!-- Produtos inseridos pelo JavaScript -->
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    
+
+<!-- RODAPÉ -->
+<footer class="rodape-home">
+
+    <div class="newsletter">
+        <h3>NEWSLETTER</h3>
+        <p>Receba novidades e promoções exclusivas</p>
+
+        <form>
+            <input type="email" placeholder="Seu e-mail" required>
+            <button type="submit">→</button>
+        </form>
+    </div>
+
+    <div class="redes-sociais">
+        <h3>SIGA A FIFTH BLOOM</h3>
+
+        <div class="redes-icones">
+            <a href="#" aria-label="Instagram">◎</a>
+            <a href="#" aria-label="TikTok">♪</a>
+            <a href="#" aria-label="YouTube">▶</a>
+            <a href="#" aria-label="Pinterest">℗</a>
+        </div>
+    </div>
+
+    <div class="pagamentos">
+        <h3>FORMAS DE PAGAMENTO</h3>
+
+        <div class="pagamento-icones">
+            <span>VISA</span>
+            <span>●●</span>
+            <span>PIX</span>
+            <span>AMEX</span>
+            <span>Pay</span>
+        </div>
+    </div>
+
+</footer>
+
+
+    <script src="js/script.js"></script>
+    <script src="js/produtos.js"></script>
+
+</body>
+</html>
