@@ -1,0 +1,347 @@
+
+/* BANNER */
+
+.banner-promocoes {
+    min-height: 390px;
+    background: linear-gradient(110deg, #fff6f4, #e8b4b8);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 55px 10%;
+}
+
+.conteudo-promocoes {
+    max-width: 570px;
+}
+
+.conteudo-promocoes > span,
+.titulo-promocoes > span,
+.frase-promocoes > span {
+    color: #a66d76;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 3px;
+}
+
+.conteudo-promocoes h1 {
+    color: #1c1c1c;
+    font-size: 39px;
+    line-height: 1.35;
+    font-weight: 600;
+    margin: 18px 0;
+}
+
+.conteudo-promocoes p {
+    color: #555;
+    font-size: 13px;
+    line-height: 1.8;
+    max-width: 450px;
+    margin-bottom: 25px;
+}
+
+.botao-promocoes {
+    display: inline-block;
+    background: #1c1c1c;
+    color: #fff;
+    padding: 14px 25px;
+    text-decoration: none;
+    font-size: 10px;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.botao-promocoes:hover {
+    background: #fff;
+    color: #1c1c1c;
+}
+
+/* DESTAQUE DE DESCONTO */
+
+.destaque-desconto {
+    width: 190px;
+    height: 190px;
+    border: 1px solid rgba(28, 28, 28, 0.5);
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #1c1c1c;
+    flex-shrink: 0;
+}
+
+.destaque-desconto span {
+    font-size: 12px;
+    letter-spacing: 3px;
+}
+
+.destaque-desconto strong {
+    font-size: 58px;
+    line-height: 1.1;
+    font-weight: 600;
+}
+
+/* TÍTULO E SEÇÃO */
+
+.secao-promocoes {
+    padding: 75px 8%;
+}
+
+.titulo-promocoes {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.titulo-promocoes h2 {
+    color: #1c1c1c;
+    font-size: 30px;
+    font-weight: 500;
+    margin: 12px 0;
+}
+
+.titulo-promocoes p {
+    color: #777;
+    font-size: 13px;
+}
+
+/* GRADE */
+
+.grade-promocoes {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.card-promocao {
+    border: 1px solid #e5e5e5;
+    background: #fff;
+    transition: 0.3s;
+}
+
+.card-promocao:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+}
+
+/* IMAGENS */
+
+.imagem-promocao {
+    height: 260px;
+    background: #fff6f4;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.imagem-promocao img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 15px;
+    transition: 0.4s;
+}
+
+.card-promocao:hover .imagem-promocao img {
+    transform: scale(1.05);
+}
+
+.selo-desconto {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    z-index: 1;
+    background: #e8b4b8;
+    color: #1c1c1c;
+    padding: 7px 12px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+/* INFORMAÇÕES */
+
+.info-promocao {
+    padding: 20px;
+}
+
+.categoria-promocao {
+    color: #b77c84;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+}
+
+.info-promocao h3 {
+    color: #1c1c1c;
+    font-size: 13px;
+    margin: 10px 0;
+    font-weight: 600;
+}
+
+.info-promocao p {
+    color: #777;
+    font-size: 11px;
+    line-height: 1.7;
+    min-height: 38px;
+}
+
+/* PREÇOS */
+
+.valores-promocao {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0;
+    gap: 3px;
+}
+
+.valores-promocao del {
+    color: #999;
+    font-size: 11px;
+}
+
+.valores-promocao strong {
+    color: #1c1c1c;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+/* BOTÃO */
+
+.info-promocao button {
+    width: 100%;
+    padding: 12px 8px;
+    background: #1c1c1c;
+    color: #fff;
+    border: 1px solid #1c1c1c;
+    font-family: 'Poppins', sans-serif;
+    font-size: 9px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.info-promocao button:hover {
+    background: #e8b4b8;
+    border-color: #e8b4b8;
+    color: #1c1c1c;
+}
+
+/* BENEFÍCIOS */
+
+.beneficios-promocoes {
+    background: #fff6f4;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding: 55px 10%;
+    text-align: center;
+}
+
+.beneficio-promocao span {
+    color: #b77c84;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.beneficio-promocao h3 {
+    color: #1c1c1c;
+    font-size: 14px;
+    margin: 10px 0;
+    font-weight: 500;
+}
+
+.beneficio-promocao p {
+    color: #777;
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+/* FRASE FINAL */
+
+.frase-promocoes {
+    text-align: center;
+    padding: 65px 20px;
+}
+
+.frase-promocoes h2 {
+    color: #1c1c1c;
+    font-size: 24px;
+    font-weight: 500;
+    margin: 15px 0;
+}
+
+.frase-promocoes p {
+    color: #777;
+    font-size: 12px;
+}
+
+/* RODAPÉ */
+
+.rodape-promocoes {
+    background: #1c1c1c;
+    color: white;
+    text-align: center;
+    padding: 22px;
+}
+
+.rodape-promocoes p {
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 1000px) {
+    .grade-promocoes {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 650px) {
+    .banner-promocoes {
+        padding: 45px 7%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 30px;
+    }
+
+    .conteudo-promocoes h1 {
+        font-size: 29px;
+    }
+
+    .destaque-desconto {
+        width: 125px;
+        height: 125px;
+        align-self: flex-end;
+    }
+
+    .destaque-desconto strong {
+        font-size: 40px;
+    }
+
+    .secao-promocoes {
+        padding: 55px 5%;
+    }
+
+    .titulo-promocoes h2 {
+        font-size: 24px;
+    }
+
+    .grade-promocoes {
+        grid-template-columns: 1fr;
+    }
+
+    .imagem-promocao {
+        height: 290px;
+    }
+
+    .beneficios-promocoes {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .frase-promocoes h2 {
+        font-size: 20px;
+    }
+}

@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Minha Sacola | FIFTH BLOOM</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="sacola.css">
+</head>
+
+<body>
+
+    <div id="header-container"></div>
+
+    <main class="pagina-sacola">
+
+        <section class="banner-sacola">
+            <span>SUA EXPERIÊNCIA FIFTH BLOOM</span>
+            <h1>Minha sacola</h1>
+            <p>Seus favoritos estão quase chegando até você.</p>
+        </section>
+
+        <section class="conteudo-sacola">
+
+            <div class="lista-sacola-container">
+                <div class="titulo-sacola">
+                    <h2>Seus produtos</h2>
+                    <span id="quantidade-itens">0 itens</span>
+                </div>
+
+                <div id="lista-sacola"></div>
+
+                <a href="produtos.html" class="continuar-comprando">
+                    ← CONTINUAR COMPRANDO
+                </a>
+            </div>
+
+            <aside class="resumo-sacola">
+                <h2>Resumo do pedido</h2>
+
+                <div class="linha-resumo">
+                    <span>Subtotal</span>
+                    <strong id="subtotal-sacola">R$ 0,00</strong>
+                </div>
+
+                <div class="linha-resumo">
+                    <span>Frete</span>
+                    <strong id="frete-sacola">A calcular</strong>
+                </div>
+
+                <div class="linha-resumo total-sacola">
+                    <span>Total</span>
+                    <strong id="total-sacola">R$ 0,00</strong>
+                </div>
+
+                <p class="aviso-frete">
+                    Frete grátis nas compras acima de R$ 150,00.
+                </p>
+
+                <button class="botao-finalizar" id="botao-finalizar">
+                    FINALIZAR COMPRA
+                </button>
+
+                <p class="aviso-checkout">
+                    Ambiente demonstrativo para projeto acadêmico.
+                </p>
+            </aside>
+
+        </section>
+
+    </main>
+
+    <footer class="rodape-sacola">
+        <p>© 2026 FIFTH BLOOM. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="./js/include-header.js"></script>
+    <script src="./js/carrinho.js"></script>
+    <script src="./js/sacola.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Produto | FIFTH BLOOM</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="produto.css">
+</head>
+
+<body>
+
+    <div id="header-container"></div>
+
+    <main class="pagina-produto">
+
+        <div class="caminho-produto">
+            <a href="index.html">Início</a>
+            <span>/</span>
+            <a href="produtos.html">Produtos</a>
+            <span>/</span>
+            <span id="nome-caminho">Produto</span>
+        </div>
+
+        <section class="detalhes-produto">
+
+            <div class="imagem-principal">
+                <img id="imagem-produto" src="" alt="Imagem do produto">
+            </div>
+
+            <div class="informacoes-produto">
+
+                <span class="categoria-produto" id="categoria-produto"></span>
+
+                <h1 id="nome-produto">Carregando produto...</h1>
+
+                <p class="descricao-produto" id="descricao-produto"></p>
+
+                <div class="preco-container">
+                    <span id="preco-produto" class="preco-produto"></span>
+                </div>
+
+                <div class="separador"></div>
+
+                <div class="quantidade-container">
+                    <label>Quantidade</label>
+
+                    <div class="controle-quantidade">
+                        <button type="button" id="diminuir">−</button>
+                        <span id="quantidade">1</span>
+                        <button type="button" id="aumentar">+</button>
+                    </div>
+                </div>
+
+                <div class="botoes-produto">
+
+                    <button class="botao-adicionar" id="adicionar-sacola">
+                        ADICIONAR À SACOLA
+                    </button>
+
+                    <button class="botao-favorito" id="adicionar-favorito" title="Adicionar aos favoritos">
+                        ♡
+                    </button>
+
+                </div>
+
+                <p class="mensagem-sacola" id="mensagem-sacola"></p>
+
+                <div class="beneficios-produto">
+                    <p>♡ Produtos selecionados com carinho</p>
+                    <p>✧ Beleza, cuidado e autoestima</p>
+                    <p>✧ FIFTH BLOOM — floresça no seu tempo</p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="sobre-produto">
+            <h2>Sobre o produto</h2>
+            <p id="texto-sobre-produto"></p>
+        </section>
+
+        <section class="voltar-produtos">
+            <a href="produtos.html">← CONTINUAR EXPLORANDO</a>
+        </section>
+
+    </main>
+
+    <footer class="rodape-produto">
+        <p>© 2026 FIFTH BLOOM. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="./js/include-header.js"></script>
+    <script src="./js/carrinho.js"></script>
+    <script src="./js/produtos.js"></script>
+
+</body>
+</html>

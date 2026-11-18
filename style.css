@@ -1,5 +1,5 @@
 
-/* Variáveis globais */
+/* VARIÁVEIS GLOBAIS */
 :root {
     --color-primary: #FFF6F4;
     --color-primary-dark: #E8B4B8;
@@ -10,7 +10,7 @@
     --font-main: 'Poppins', sans-serif;
 }
 
-/* Reset básico */
+/* RESET BÁSICO */
 * {
     margin: 0;
     padding: 0;
@@ -21,7 +21,10 @@ body {
     font-family: var(--font-main);
 }
 
-/* HEADER */
+/* ================================
+   CABEÇALHO COMPARTILHADO
+================================ */
+
 .header {
     width: 100%;
     background-color: var(--color-bg);
@@ -72,16 +75,16 @@ body {
     transition: color 0.2s ease;
 }
 
-.nav-link:hover {
+.nav-link:hover,
+.nav-link.active {
     color: #C77F8B;
 }
 
 .nav-link.active {
-    color: #C77F8B;
     font-weight: 600;
 }
 
-/* AÇÕES DO HEADER */
+/* AÇÕES DO CABEÇALHO */
 .header-actions {
     display: flex;
     align-items: center;
@@ -129,7 +132,7 @@ body {
     pointer-events: none;
 }
 
-/* Botão da lupa caso o HTML use um botão com SVG */
+/* BOTÃO DA LUPA */
 .search-box button {
     display: flex;
     align-items: center;
@@ -180,7 +183,7 @@ body {
     color: #C77F8B;
 }
 
-/* Ícones em imagem */
+/* ÍCONES */
 .menu-item img,
 .icon-link img,
 .profile-link img,
@@ -191,14 +194,14 @@ body {
     object-fit: contain;
 }
 
-/* Sacola */
+/* SACOLA */
 .sacola,
 .sacola-link {
     width: 58px;
     flex-shrink: 0;
 }
 
-/* Número de itens da sacola */
+/* CONTADOR DA SACOLA */
 .contador-sacola {
     position: absolute;
     top: -2px;
@@ -216,13 +219,29 @@ body {
     font-weight: 500;
 }
 
-/* Perfil */
+/* PERFIL */
 .perfil,
 .profile-link {
     padding-right: 2px;
 }
 
-/* Botão de perfil antigo, caso ainda esteja no HTML */
+/* BARRA DE FRETE */
+.barra-frete {
+    width: 100%;
+    height: 35px;
+    background-color: #1C1C1C;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-main);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+/* BOTÃO ANTIGO */
 .btn-primary {
     font-family: var(--font-main);
     background-color: var(--color-bg);
@@ -239,7 +258,7 @@ body {
     background-color: var(--color-primary);
 }
 
-/* MENU HAMBÚRGUER: mantido como no seu CSS original */
+/* MENU HAMBÚRGUER */
 .hamburguer {
     display: none;
     font-size: 24px;
@@ -249,31 +268,23 @@ body {
     color: var(--color-text);
 }
 
-/* TELAS PEQUENAS */
-
-    @media (max-width: 768px) {
-
+/* RESPONSIVIDADE DO CABEÇALHO */
+@media (max-width: 768px) {
 
     .header-container {
         padding: 10px 16px;
         gap: 12px;
     }
 
-
-    /* Logo menor e proporcional */
     .logo img {
         width: 45px;
     }
 
-
-    /* Oculta a busca e o botão no celular */
     .search-box,
     .btn-primary {
         display: none;
     }
 
-
-    /* Botão hambúrguer */
     .hamburguer {
         display: flex;
         align-items: center;
@@ -286,39 +297,28 @@ body {
         cursor: pointer;
     }
 
-
-    /* Menu fechado por padrão */
     .main-nav {
         display: none;
         flex-direction: column;
         align-items: stretch;
         gap: 0;
-
-
         position: absolute;
         top: 100%;
         right: 12px;
         left: auto;
-
-
         width: 200px;
         padding: 8px 0;
-
-
         background-color: var(--color-bg);
-        border: 1px solid #eeeeee;
+        border: 1px solid #EEEEEE;
         border-radius: 10px;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.10);
     }
 
-
-    /* Menu aberto */
-    .main-nav.ativo {
+    /* MENU ABERTO: compatível com include-header.js */
+    .main-nav.active {
         display: flex;
     }
 
-
-    /* Links do menu */
     .nav-link {
         display: block;
         padding: 12px 16px;
@@ -326,12 +326,10 @@ body {
         text-align: right;
     }
 
-
     .nav-link:hover {
         background-color: var(--color-primary);
     }
 }
-
 
 /* ================================
    DESTAQUES DA PÁGINA INICIAL
@@ -347,7 +345,6 @@ body {
 }
 
 /* BANNER PRINCIPAL */
-
 .banner-principal {
     background-color: #E8B4B8;
     min-height: 670px;
@@ -398,7 +395,6 @@ body {
 }
 
 /* PRODUTO EM DESTAQUE */
-
 .produto-destaque {
     position: relative;
     min-height: 670px;
@@ -455,7 +451,6 @@ body {
 }
 
 /* MAIS AMADOS */
-
 .mais-amados {
     border: 1px solid var(--color-border);
     padding: 18px;
@@ -549,7 +544,6 @@ body {
 }
 
 /* PROMOÇÕES E BENEFÍCIOS */
-
 .coluna-promocoes {
     border: 1px solid var(--color-border);
     display: flex;
@@ -702,10 +696,7 @@ body {
     color: #333;
 }
 
-/* ================================
-   RESPONSIVIDADE
-================================ */
-
+/* RESPONSIVIDADE DA PÁGINA INICIAL */
 @media (max-width: 1100px) {
     .home-destaques {
         grid-template-columns: repeat(2, 1fr);
@@ -747,13 +738,13 @@ body {
     }
 }
 
-
-/* ÁREA DE LOGIN */
+/* ================================
+   ÁREA DE LOGIN
+================================ */
 
 .area-login {
     min-height: 650px;
     padding: 60px 20px;
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -770,14 +761,11 @@ body {
     width: 100%;
     max-width: 430px;
     padding: 40px;
-
     background: rgba(255, 255, 255, 0.96);
-
     border: 1px solid #E5E5E5;
     border-radius: 12px;
-
     text-align: center;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.10);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.10);
 }
 
 .logo-painel {
@@ -813,7 +801,7 @@ body {
     padding: 0 14px;
     border: 1px solid #E5E5E5;
     border-radius: 6px;
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--font-main);
 }
 
 .recuperar {
@@ -831,7 +819,7 @@ body {
     border: none;
     border-radius: 6px;
     cursor: pointer;
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--font-main);
     font-weight: 600;
 }
 
@@ -863,13 +851,11 @@ body {
     background: white;
     border: 1px solid #E5E5E5;
     border-radius: 6px;
-
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 12px;
-
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--font-main);
     cursor: pointer;
 }
 
@@ -904,6 +890,3 @@ body {
         padding: 30px 22px;
     }
 }
-
-
-

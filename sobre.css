@@ -1,0 +1,238 @@
+
+/* BANNER */
+
+.banner-sobre {
+    min-height: 350px;
+    background: linear-gradient(110deg, #fff6f4, #e8b4b8);
+    display: flex;
+    align-items: center;
+    padding: 60px 10%;
+}
+
+.conteudo-banner-sobre {
+    max-width: 650px;
+}
+
+.conteudo-banner-sobre span,
+.etiqueta-sobre,
+.mensagem-final-sobre span {
+    color: #a66d76;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 3px;
+}
+
+.conteudo-banner-sobre h1 {
+    color: #1c1c1c;
+    font-size: 39px;
+    line-height: 1.4;
+    font-weight: 500;
+    margin: 18px 0;
+}
+
+.conteudo-banner-sobre p {
+    color: #555;
+    font-size: 13px;
+    line-height: 1.9;
+    max-width: 470px;
+}
+
+/* NOSSA HISTÓRIA */
+
+.historia-sobre {
+    display: grid;
+    grid-template-columns: 1.3fr 0.7fr;
+    align-items: center;
+    gap: 80px;
+    padding: 90px 12%;
+}
+
+.texto-historia h2,
+.conteudo-proposito h2 {
+    color: #1c1c1c;
+    font-size: 29px;
+    line-height: 1.5;
+    font-weight: 500;
+    margin: 15px 0 25px;
+}
+
+.texto-historia p,
+.conteudo-proposito p {
+    color: #666;
+    font-size: 13px;
+    line-height: 2;
+    margin-bottom: 17px;
+    text-align: justify;
+}
+
+.texto-historia strong,
+.conteudo-proposito strong {
+    color: #1c1c1c;
+    font-weight: 600;
+}
+
+/* IMAGEM DA HISTÓRIA */
+
+.imagem-historia {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+}
+
+.moldura-imagem {
+    width: 270px;
+    height: 320px;
+    background: #fff6f4;
+    border: 1px solid #e8b4b8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.moldura-imagem img {
+    width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.imagem-historia > span {
+    color: #b77c84;
+    font-size: 10px;
+    letter-spacing: 4px;
+    font-weight: 600;
+}
+
+/* SIGNIFICADO */
+
+.significado-sobre {
+    background: #fff6f4;
+    padding: 75px 12%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 70px;
+}
+
+.titulo-significado h2 {
+    color: #1c1c1c;
+    font-size: 29px;
+    font-weight: 500;
+    line-height: 1.5;
+    margin-top: 18px;
+}
+
+.texto-significado p {
+    color: #666;
+    font-size: 13px;
+    line-height: 2;
+    text-align: justify;
+}
+
+/* PROPÓSITO */
+
+.proposito-sobre {
+    padding: 90px 18%;
+    text-align: center;
+}
+
+.conteudo-proposito {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.conteudo-proposito h2 {
+    margin-bottom: 25px;
+}
+
+.conteudo-proposito p {
+    text-align: center;
+}
+
+/* MENSAGEM FINAL */
+
+.mensagem-final-sobre {
+    background: #fff6f4;
+    text-align: center;
+    padding: 70px 20px;
+}
+
+.mensagem-final-sobre h2 {
+    color: #1c1c1c;
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 1.5;
+    margin: 15px 0;
+}
+
+.mensagem-final-sobre p {
+    color: #777;
+    font-size: 12px;
+}
+
+/* RODAPÉ */
+
+.rodape-sobre {
+    background: #1c1c1c;
+    color: #fff;
+    text-align: center;
+    padding: 22px;
+}
+
+.rodape-sobre p {
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 800px) {
+
+    .historia-sobre {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 65px 8%;
+    }
+
+    .imagem-historia {
+        grid-row: 1;
+    }
+
+    .significado-sobre {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 60px 8%;
+    }
+
+    .proposito-sobre {
+        padding: 65px 8%;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .banner-sobre {
+        min-height: 300px;
+        padding: 45px 7%;
+    }
+
+    .conteudo-banner-sobre h1 {
+        font-size: 29px;
+    }
+
+    .texto-historia h2,
+    .titulo-significado h2,
+    .conteudo-proposito h2 {
+        font-size: 24px;
+    }
+
+    .moldura-imagem {
+        width: 220px;
+        height: 260px;
+    }
+
+    .mensagem-final-sobre h2 {
+        font-size: 23px;
+    }
+}

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lançamentos | FIFTH BLOOM</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="lancamentos.css">
+</head>
+
+<body>
+
+    <!-- CABEÇALHO COMPARTILHADO -->
+    <div id="header-container"></div>
+
+    <main>
+
+        <!-- BANNER -->
+        <section class="banner-lancamentos">
+            <div class="conteudo-banner">
+                <span>SEMPRE UMA NOVIDADE PARA VOCÊ</span>
+                <h1>Novos encantos,<br>novas descobertas.</h1>
+                <p>Conheça os lançamentos que chegaram para fazer parte da sua rotina de beleza.</p>
+                <a href="#novidades" class="botao-banner">DESCUBRA AS NOVIDADES</a>
+            </div>
+        </section>
+
+        <!-- TÍTULO -->
+        <section class="secao-lancamentos" id="novidades">
+
+            <div class="titulo-lancamentos">
+                <span>ACABARAM DE CHEGAR</span>
+                <h2>Últimos lançamentos</h2>
+                <p>Produtos especiais selecionados para você.</p>
+            </div>
+
+            <!-- PRODUTOS -->
+            <div class="grade-lancamentos">
+
+                <article class="card-lancamento">
+                    <div class="imagem-lancamento">
+                        <span class="selo-novo">NOVO</span>
+                        <img src="assets/BASE VELVET SKIN.png" alt="Base Velvet Skin">
+                    </div>
+
+                    <div class="informacoes-lancamento">
+                        <span class="categoria-lancamento">SKINCARE</span>
+                        <h3>BASE VELVET SKIN</h3>
+                        <p>Sérum de cuidado facial para uma pele iluminada.</p>
+                        <strong>R$ 89,90</strong>
+                        <button onclick="adicionarSacola('BASE VELVET SKIN')">
+                            ADICIONAR À SACOLA
+                        </button>
+                    </div>
+                </article>
+
+                <article class="card-lancamento">
+                    <div class="imagem-lancamento">
+                        <span class="selo-novo">NOVO</span>
+                        <img src="assets/BLUSH ROSA PÉTALE.png" alt="Blush Rosa Pétale">
+                    </div>
+
+                    <div class="informacoes-lancamento">
+                        <span class="categoria-lancamento">MAQUIAGEM</span>
+                        <h3>BLUSH ROSA PÉTALE</h3>
+                        <p>Blush de acabamento delicado e natural.</p>
+                        <strong>R$ 79,90</strong>
+                        <button onclick="adicionarSacola('BLUSH ROSA PÉTALE')">
+                            ADICIONAR À SACOLA
+                        </button>
+                    </div>
+                </article>
+
+                <article class="card-lancamento">
+                    <div class="imagem-lancamento">
+                        <span class="selo-novo">NOVO</span>
+                        <img src="assets/LUMIÈRE GLOSS.png" alt="Lumière Gloss">
+                    </div>
+
+                    <div class="informacoes-lancamento">
+                        <span class="categoria-lancamento">MAQUIAGEM</span>
+                        <h3>LUMIÈRE GLOSS</h3>
+                        <p>Gloss labial com brilho e textura confortável.</p>
+                        <strong>R$ 49,90</strong>
+                        <button onclick="adicionarSacola('LUMIÈRE GLOSS')">
+                            ADICIONAR À SACOLA
+                        </button>
+                    </div>
+                </article>
+
+                <article class="card-lancamento">
+                    <div class="imagem-lancamento">
+                        <span class="selo-novo">NOVO</span>
+                        <img src="assets/CRÈME BLOOM SUPREME.png" alt="Crème Bloom Supreme">
+                    </div>
+
+                    <div class="informacoes-lancamento">
+                        <span class="categoria-lancamento">HIDRATAÇÃO</span>
+                        <h3>CRÈME BLOOM SUPREME</h3>
+                        <p>Hidratante corporal com textura suave.</p>
+                        <strong>R$ 119,90</strong>
+                        <button onclick="adicionarSacola('CRÈME BLOOM SUPREME')">
+                            ADICIONAR À SACOLA
+                        </button>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- FRASE FINAL -->
+        <section class="frase-lancamentos">
+            <span>FIFTH BLOOM</span>
+            <h2>Sua beleza, sua essência, suas descobertas.</h2>
+            <p>Encontre seus novos favoritos e floresça todos os dias.</p>
+        </section>
+
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer class="rodape-lancamentos">
+        <p>© 2026 FIFTH BLOOM. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="./js/include-header.js"></script>
+
+    <script>
+        function adicionarSacola(nome) {
+            alert(nome + " foi selecionado!");
+        }
+    </script>
+
+</body>
+</html>

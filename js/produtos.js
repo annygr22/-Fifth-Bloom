@@ -46,19 +46,37 @@ const produtos = [
 
 const grade = document.getElementById("gradeProdutos");
 
+// ABRIR PÁGINA INDIVIDUAL DO PRODUTO
+function linkProduto(nome) {
+    return `produto.html?nome=${encodeURIComponent(nome)}`;
+}
+
+// MOSTRAR PRODUTOS
 function mostrarProdutos(lista) {
+    if (!grade) return;
+
     grade.innerHTML = "";
 
     lista.forEach(produto => {
         grade.innerHTML += `
             <article class="card-produto">
 
-                <div class="imagem-produto">
-                    <img src="${produto.imagem}"
-                         alt="${produto.nome}">
-                </div>
+                <button 
+                    class="botao-favorito-card"
+                    onclick="adicionarFavorito('${produto.nome}')"
+                    title="Adicionar aos favoritos">
+                    ♡
+                </button>
 
-                <h3>${produto.nome}</h3>
+                <a href="${linkProduto(produto.nome)}" class="link-produto">
+
+                    <div class="imagem-produto">
+                        <img src="${produto.imagem}" alt="${produto.nome}">
+                    </div>
+
+                    <h3>${produto.nome}</h3>
+
+                </a>
 
                 <p>${produto.descricao}</p>
 
@@ -66,7 +84,8 @@ function mostrarProdutos(lista) {
                     R$ ${produto.preco.toFixed(2).replace(".", ",")}
                 </div>
 
-                <button class="botao-sacola"
+                <button 
+                    class="botao-sacola"
                     onclick="adicionarSacola('${produto.nome}')">
                     ADICIONAR À SACOLA
                 </button>
@@ -76,8 +95,32 @@ function mostrarProdutos(lista) {
     });
 }
 
-mostrarProdutos(produtos);
+// ADICIONAR AOS FAVORITOS
+function adicionarFavorito(nome) {
+    const produto = produtos.find(p => p.nome === nome);
 
-function adicionarSacola(nome) {
-    alert(nome + " foi selecionado!");
+    if (!produto) return;
+
+    const favoritos = JSON.parse(
+        localStorage.getItem("fifthBloomFavoritos")
+    ) || [];
+
+    const jaExiste = favoritos.some(p => p.nome === nome);
+
+    if (jaExiste) {
+        alert("Esse produto já está nos seus favoritos!");
+        return;
+    }
+
+    favoritos.push(produto);
+
+    localStorage.setItem(
+        "fifthBloomFavoritos",
+        JSON.stringify(favoritos)
+    );
+
+    alert(nome + " foi adicionado aos favoritos!");
 }
+
+// INICIALIZAR
+mostrarProdutos(produtos);

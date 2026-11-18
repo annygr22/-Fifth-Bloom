@@ -1,247 +1,7 @@
 
-/* ==================================
-   CABEÇALHO FIFTH BLOOM
-================================== */
-
-/* BARRA SUPERIOR */
-
-.barra-frete {
-    width: 100%;
-    height: 32px;
-    background: #1C1C1C;
-    color: #FFFFFF;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    font-family: 'Poppins', sans-serif;
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.3px;
-}
-
-
-/* CABEÇALHO */
-
-.cabecalho {
-    width: 100%;
-    min-height: 100px;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    padding: 12px 5%;
-    background: #FFFFFF;
-
-    border: 1px solid #E5E5E5;
-    position: relative;
-    z-index: 10;
-}
-
-
-/* LOGO */
-
-.logo {
-    display: flex;
-    align-items: center;
-    flex-shrink: 0;
-}
-
-.logo img {
-    width: 105px;
-    height: 75px;
-    object-fit: contain;
-}
-
-
-/* MENU DE NAVEGAÇÃO */
-
-.menu-navegacao {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 25px;
-}
-
-.menu-navegacao a {
-    text-decoration: none;
-    color: #1C1C1C;
-
-    font-family: 'Poppins', sans-serif;
-    font-size: 12px;
-    font-weight: 500;
-
-    transition: 0.3s;
-}
-
-.menu-navegacao a:hover,
-.menu-navegacao .pagina-ativa {
-    color: #D99DA3;
-}
-
-
-/* AÇÕES DO CABEÇALHO */
-
-.acoes-cabecalho {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.acoes-cabecalho a {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-
-    text-decoration: none;
-    color: #1C1C1C;
-
-    font-family: 'Poppins', sans-serif;
-    font-size: 11px;
-    font-weight: 500;
-}
-
-.acoes-cabecalho svg {
-    width: 21px;
-    height: 21px;
-
-    fill: none;
-    stroke: #1C1C1C;
-    stroke-width: 1.5;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-}
-
-
-/* DIVISÕES */
-
-.acao-sacola,
-.acao-perfil {
-    border-left: 1px solid #E5E5E5;
-    padding-left: 15px;
-}
-
-
-/* CONTADOR DA SACOLA */
-
-.acao-sacola {
-    position: relative;
-}
-
-.contador-sacola {
-    position: absolute;
-    top: -9px;
-    right: -8px;
-
-    width: 16px;
-    height: 16px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 50%;
-    background: #E8B4B8;
-    color: #FFFFFF;
-
-    font-size: 9px;
-}
-
-
-/* MENU MOBILE */
-
-#menu-toggle,
-.menu-mobile {
-    display: none;
-}
-
-
-/* ==================================
-   RESPONSIVIDADE DO CABEÇALHO
-================================== */
-
-@media (max-width: 1000px) {
-
-    .cabecalho {
-        padding: 12px 3%;
-    }
-
-    .menu-navegacao {
-        gap: 13px;
-    }
-
-    .menu-navegacao a {
-        font-size: 10px;
-    }
-
-    .acoes-cabecalho {
-        gap: 10px;
-    }
-
-    .acoes-cabecalho a {
-        font-size: 9px;
-    }
-
-}
-
-@media (max-width: 750px) {
-
-    .cabecalho {
-        min-height: 80px;
-    }
-
-    .logo img {
-        width: 85px;
-        height: 65px;
-    }
-
-    .menu-mobile {
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
-        cursor: pointer;
-        order: 3;
-    }
-
-    .menu-mobile span {
-        width: 24px;
-        height: 2px;
-        background: #1C1C1C;
-    }
-
-    .menu-navegacao {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-
-        width: 100%;
-        padding: 25px;
-
-        background: #FFFFFF;
-        border: 1px solid #E5E5E5;
-
-        flex-direction: column;
-        align-items: center;
-    }
-
-    #menu-toggle:checked ~ .menu-navegacao {
-        display: flex;
-    }
-
-    .acoes-cabecalho {
-        margin-left: auto;
-        margin-right: 18px;
-    }
-
-    .acao-pesquisa span,
-    .acao-perfil span {
-        display: none;
-    }
-
-}
+/* ================================
+   PÁGINA DE PRODUTOS
+================================ */
 
 .pagina-produtos {
     width: 92%;
@@ -282,7 +42,7 @@
 /* FILTROS */
 
 .filtros {
-    border-top: 1px solid #aaa;
+    border-top: 1px solid #AAAAAA;
     padding-top: 15px;
 }
 
@@ -308,7 +68,7 @@
 
 .filtros hr {
     border: none;
-    border-top: 1px solid #ccc;
+    border-top: 1px solid #CCCCCC;
     margin: 25px 0 18px;
 }
 
@@ -329,6 +89,7 @@
     font-family: inherit;
     font-size: 12px;
     outline: none;
+    cursor: pointer;
 }
 
 /* GRADE DE PRODUTOS */
@@ -339,7 +100,7 @@
     gap: 30px 20px;
 }
 
-/* CARD */
+/* CARD DE PRODUTO */
 
 .card-produto {
     min-width: 0;
@@ -356,6 +117,11 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.imagem-produto img:hover {
+    transform: scale(1.04);
 }
 
 .card-produto h3 {
@@ -377,12 +143,14 @@
     margin: 8px 0;
 }
 
+/* BOTÃO ADICIONAR À SACOLA */
+
 .botao-sacola {
     width: 100%;
     padding: 9px;
     border: none;
     background: #E8B4B8;
-    color: white;
+    color: #FFFFFF;
     font-family: inherit;
     font-size: 10px;
     cursor: pointer;
@@ -390,12 +158,15 @@
 }
 
 .botao-sacola:hover {
-    background: #d99da3;
+    background: #D99DA3;
 }
 
-/* RESPONSIVIDADE */
+/* ================================
+   RESPONSIVIDADE DOS PRODUTOS
+================================ */
 
 @media (max-width: 850px) {
+
     .conteudo-produtos {
         grid-template-columns: 190px 1fr;
         gap: 20px;
@@ -407,6 +178,12 @@
 }
 
 @media (max-width: 550px) {
+
+    .pagina-produtos {
+        width: 92%;
+        padding: 25px 0 50px;
+    }
+
     .conteudo-produtos {
         grid-template-columns: 1fr;
     }
@@ -423,9 +200,17 @@
 
     .grade-produtos {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 25px 12px;
+    }
+
+    .imagem-produto {
+        height: 130px;
     }
 }
 
+/* ================================
+   PAGAMENTOS
+================================ */
 
 .pagamentos {
     display: flex;
@@ -433,15 +218,16 @@
     align-items: flex-start;
 }
 
+.pagamento-icones {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
 .pagamento-icones .mastercard {
     color: #D99DA3;
     letter-spacing: -5px;
 }
-
-.pagamento-icones {
-    gap: 14px;
-}
-
 
 /* ================================
    RODAPÉ DA PÁGINA DE PRODUTOS
@@ -451,15 +237,11 @@
     width: auto;
     margin: 35px 4%;
     padding: 25px;
-
     border: 1px solid var(--color-border);
-
     display: grid;
     grid-template-columns: 1.5fr 1fr 1fr;
-
     align-items: center;
     gap: 30px;
-
     font-family: var(--font-main);
 }
 
@@ -485,12 +267,9 @@
     width: 100%;
     min-width: 0;
     padding: 12px;
-
     border: none;
     outline: none;
-
     background-color: #F5F0EE;
-
     font-family: var(--font-main);
     font-size: 11px;
 }
@@ -499,7 +278,6 @@
     border: none;
     background-color: #E8B4B8;
     color: #FFFFFF;
-
     padding: 0 20px;
     cursor: pointer;
 }
@@ -511,7 +289,6 @@
     display: flex;
     align-items: center;
     gap: 18px;
-
     margin-top: 15px;
     flex-wrap: wrap;
 }
@@ -528,9 +305,10 @@
     color: #333;
 }
 
-/* RESPONSIVIDADE */
+/* RESPONSIVIDADE DO RODAPÉ */
 
 @media (max-width: 768px) {
+
     .rodape-home {
         grid-template-columns: 1fr;
         margin: 25px 4%;
