@@ -1,19 +1,54 @@
-document.getElementById("form-login").addEventListener("submit", function(event) {
+fetch("./components/header.html")
+    .then(response => {
+        if (!response.ok) {
+            throw new Error("Não foi possível carregar o cabeçalho.");
+        }
 
-    event.preventDefault();
+        return response.text();
+    })
+    .then(html => {
 
-    const email = document.getElementById("email").value.trim();
+        const container = document.getElementById("header-container");
 
-    if (!email) {
-        alert("Digite seu e-mail.");
-        return;
-    }
+        if (!container) {
+            console.error("O elemento #header-container não foi encontrado.");
+            return;
+        }
 
-    alert("A tela está funcionando! Agora precisamos conectar o sistema de autenticação.");
-});
+        // Insere o cabeçalho
+        container.innerHTML = html;
 
-document.getElementById("login-google").addEventListener("click", function() {
+        // Identifica a página atual
+        const paginaAtual =
+            window.location.pathname.split("/").pop() || "index.html";
 
-    alert("O login com Google será configurado junto com o sistema de autenticação.");
+        // Destaca o link da página atual
+        document.querySelectorAll(".main-nav .nav-link").forEach(link => {
 
-});
+            const destino = link.getAttribute("href");
+
+            if (destino === paginaAtual) {
+                link.classList.add("active");
+            }
+
+        });
+
+        // MENU HAMBÚRGUER
+        const botaoMenu = document.getElementById("btn-menu");
+        const menu = document.getElementById("main-nav");
+
+        if (botaoMenu && menu) {
+
+            botaoMenu.addEventListener("click", () => {
+                menu.classList.toggle("active");
+            });
+
+        }
+
+        // Avisa que o cabeçalho terminou de carregar
+        document.dispatchEvent(new Event("headerLoaded"));
+
+    })
+    .catch(erro => {
+        console.error("Erro ao carregar o cabeçalho:", erro);
+    });

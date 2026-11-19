@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -13,157 +12,113 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- CSS original do site -->
     <link rel="stylesheet" href="style.css">
-
-    <!-- CSS exclusivo do login -->
     <link rel="stylesheet" href="login.css">
 </head>
 
 <body>
 
-    <header class="header">
-        <div class="header-container">
-
-            <a href="index.html" class="logo">
-                <img src="assets/logo_Fifth_Blom.png" alt="Logo Fifth Bloom">
-            </a>
-
-            <nav class="main-nav" id="main-nav">
-                <a href="index.html" class="nav-link">Início</a>
-                <a href="produtos.html" class="nav-link">Produtos</a>
-                <a href="lancamentos.html" class="nav-link">Lançamentos</a>
-                <a href="sobre.html" class="nav-link">Sobre Nós</a>
-                <a href="favoritos.html" class="nav-link">Favoritos</a>
-            </nav>
-
-            <div class="header-actions">
-
-                <form class="search-box" id="search-form">
-                    <input
-                        type="search"
-                        id="campo-busca"
-                        placeholder="Buscar produtos..."
-                        aria-label="Buscar produtos"
-                    >
-
-                    <button type="submit" aria-label="Pesquisar">
-                        <svg viewBox="0 0 24 24" aria-hidden="true">
-                            <circle cx="10.5" cy="10.5" r="7.5"></circle>
-                            <line x1="16" y1="16" x2="22" y2="22"></line>
-                        </svg>
-                    </button>
-                </form>
-
-                <a href="sacola.html" class="icon-link sacola-link"
-                   aria-label="Sacola de compras">
-
-                    <img
-                        src="./assets/Ícone Minimalista de Sacola de Compras.png"
-                        alt=""
-                        class="header-icon"
-                    >
-
-                    <span class="contador-sacola" id="contador-sacola">0</span>
-                </a>
-
-                <a href="login.html" class="profile-link">
-                    <img
-                        src="./assets/Ícone de perfil minimalista azul-acinzentado.png"
-                        alt=""
-                        class="header-icon profile-icon"
-                    >
-                    <span>PERFIL</span>
-                </a>
-
-            </div>
-
-            <button class="hamburguer" id="btn-menu">☰</button>
-
-        </div>
-    </header>
-
+   <!-- CABEÇALHO COMPARTILHADO -->
+    <div id="header-container"></div>
 
     <!-- ÁREA DE LOGIN -->
     <main class="area-login">
 
-        <section class="painel-login">
+        <div class="conteudo-login">
 
+            <!-- LOGO ACIMA DO PAINEL -->
             <img
                 src="assets/logo_Fifth_Blom.png"
                 alt="Fifth Bloom"
                 class="logo-painel"
             >
 
-            <h1>Olá!</h1>
+            <!-- PAINEL DE LOGIN -->
+            <section class="painel-login">
 
-            <p>Para continuar, digite seu e-mail.</p>
+                <h1>Olá!</h1>
 
-            <form id="form-login">
+                <p>Para continuar, digite seu e-mail</p>
 
-                <label for="email">E-mail</label>
+                <form id="form-login">
 
-                <input
-                    type="email"
-                    id="email"
-                    placeholder="Digite seu e-mail"
-                    required
+                    <label for="email">E-mail:</label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Digite seu e-mail"
+                        required
+                    >
+
+                    <a href="recuperar-senha.html" class="recuperar">
+                        Esqueci meu e-mail
+                    </a>
+
+                    <button type="submit" class="continuar">
+                        CONTINUAR
+                    </button>
+
+                </form>
+
+                <!-- DIVISOR -->
+                <div class="divisor">
+                    <span></span>
+                    <p>OU</p>
+                    <span></span>
+                </div>
+
+                <!-- GOOGLE -->
+                <button
+                    type="button"
+                    class="google"
+                    id="login-google"
                 >
 
-                <a href="recuperar-senha.html" class="recuperar">
-                    Esqueceu seu e-mail?
-                </a>
+                    <img src="./assets/LOGO_GOOGLE.png" alt="Google">
 
-                <button type="submit" class="continuar">
-                    CONTINUAR
+                    Continuar com Google
+
                 </button>
 
-            </form>
+                <!-- CRIAR CONTA -->
+                <p class="criar-conta">
+                    Ainda não tem uma conta?
+                    <a href="cadastro.html">Criar conta</a>
+                </p>
 
-            <div class="divisor">
-                <span></span>
-                <p>OU</p>
-                <span></span>
-            </div>
+                <!-- TERMOS -->
+                <p class="termos">
+                    Ao continuar, você concorda com nossos
+                    <a href="termos.html">Termos de Uso</a>
+                    e
+                    <a href="privacidade.html">Política de Privacidade</a>.
+                </p>
 
-            <button type="button" class="google" id="login-google">
+            </section>
 
-                <img src="./assets/LOGO_GOOGLE.png" alt="">
-
-                Continuar com Google
-
-            </button>
-
-            <p class="criar-conta">
-                Ainda não tem uma conta?
-                <a href="cadastro.html">Criar conta</a>
-            </p>
-
-            <p class="termos">
-                Ao continuar, você concorda com nossos
-                <a href="termos.html">Termos de Uso</a>
-                e
-                <a href="privacidade.html">Política de Privacidade</a>.
-            </p>
-
-        </section>
+        </div>
 
     </main>
 
-
+    <!-- RODAPÉ -->
     <footer class="rodape-home">
 
         <div class="newsletter">
+
             <h3>NEWSLETTER</h3>
+
             <p>Receba novidades e promoções exclusivas</p>
 
             <form>
                 <input type="email" placeholder="Seu e-mail" required>
                 <button type="submit">→</button>
             </form>
+
         </div>
 
         <div class="redes-sociais">
+
             <h3>SIGA A FIFTH BLOOM</h3>
 
             <div class="redes-icones">
@@ -172,9 +127,11 @@
                 <a href="#" aria-label="YouTube">▶</a>
                 <a href="#" aria-label="Pinterest">℗</a>
             </div>
+
         </div>
 
         <div class="pagamentos">
+
             <h3>FORMAS DE PAGAMENTO</h3>
 
             <div class="pagamento-icones">
@@ -184,12 +141,14 @@
                 <span>AMEX</span>
                 <span>Pay</span>
             </div>
+
         </div>
 
     </footer>
 
-    <script src="script.js"></script>
-    <script src="login.js"></script>
+    <!-- SCRIPTS -->
+    <script src="./js/script.js"></script>
+    <script src="./login.js"></script>
 
 </body>
 </html>
