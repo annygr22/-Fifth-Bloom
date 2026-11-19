@@ -85,11 +85,11 @@ function mostrarProdutos(lista) {
                 </div>
 
                 <button 
+                    type="button"
                     class="botao-sacola"
                     onclick="adicionarSacola('${produto.nome}')">
                     ADICIONAR À SACOLA
                 </button>
-
             </article>
         `;
     });
@@ -124,3 +124,4 @@ function adicionarFavorito(nome) {
 
 // INICIALIZAR
 mostrarProdutos(produtos);
+
