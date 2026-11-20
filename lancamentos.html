@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -55,7 +56,7 @@
                         <h3>BASE VELVET SKIN</h3>
                         <p>Sérum de cuidado facial para uma pele iluminada.</p>
                         <strong>R$ 89,90</strong>
-                        <button onclick="adicionarSacola('BASE VELVET SKIN')">
+                        <button onclick="adicionarSacola('BASE VELVET SKIN', 89.90)">
                             ADICIONAR À SACOLA
                         </button>
                     </div>
@@ -72,7 +73,7 @@
                         <h3>BLUSH ROSA PÉTALE</h3>
                         <p>Blush de acabamento delicado e natural.</p>
                         <strong>R$ 79,90</strong>
-                        <button onclick="adicionarSacola('BLUSH ROSA PÉTALE')">
+                        <button onclick="adicionarSacola('BLUSH ROSA PÉTALE', 79.90)">
                             ADICIONAR À SACOLA
                         </button>
                     </div>
@@ -89,7 +90,7 @@
                         <h3>LUMIÈRE GLOSS</h3>
                         <p>Gloss labial com brilho e textura confortável.</p>
                         <strong>R$ 49,90</strong>
-                        <button onclick="adicionarSacola('LUMIÈRE GLOSS')">
+                        <button onclick="adicionarSacola('LUMIÈRE GLOSS', 49.90)">
                             ADICIONAR À SACOLA
                         </button>
                     </div>
@@ -106,7 +107,7 @@
                         <h3>CRÈME BLOOM SUPREME</h3>
                         <p>Hidratante corporal com textura suave.</p>
                         <strong>R$ 119,90</strong>
-                        <button onclick="adicionarSacola('CRÈME BLOOM SUPREME')">
+                        <button onclick="adicionarSacola('CRÈME BLOOM SUPREME', 119.90)">
                             ADICIONAR À SACOLA
                         </button>
                     </div>
@@ -129,13 +130,10 @@
         <p>© 2026 FIFTH BLOOM. Todos os direitos reservados.</p>
     </footer>
 
+    <!-- SCRIPTS DA SACOLA E DO CABEÇALHO -->
+    <script src="./js/produtos.js"></script>
+    <script src="./js/sacola.js"></script>
     <script src="./js/include-header.js"></script>
-
-    <script>
-        function adicionarSacola(nome) {
-            alert(nome + " foi selecionado!");
-        }
-    </script>
 
 </body>
 </html>

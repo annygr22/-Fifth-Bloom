@@ -46,6 +46,15 @@ const produtos = [
 
 const grade = document.getElementById("gradeProdutos");
 
+// NORMALIZAR TEXTOS PARA A PESQUISA
+function normalizarTexto(texto) {
+    return texto
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .toLocaleLowerCase("pt-BR")
+        .trim();
+}
+
 // ABRIR PÁGINA INDIVIDUAL DO PRODUTO
 function linkProduto(nome) {
     return `produto.html?nome=${encodeURIComponent(nome)}`;
@@ -71,8 +80,9 @@ function mostrarProdutos(lista) {
             <article class="card-produto">
 
                 <button
+                    type="button"
                     class="botao-favorito-card"
-                    onclick="adicionarFavorito('${produto.nome}')"
+                    data-favorito="${encodeURIComponent(produto.nome)}"
                     title="Adicionar aos favoritos">
                     ♡
                 </button>
@@ -96,12 +106,33 @@ function mostrarProdutos(lista) {
                 <button
                     type="button"
                     class="botao-sacola"
-                    onclick="adicionarSacola('${produto.nome}')">
+                    data-sacola="${encodeURIComponent(produto.nome)}">
                     ADICIONAR À SACOLA
                 </button>
 
             </article>
         `;
+    });
+
+    // EVENTOS DOS BOTÕES DE FAVORITOS
+    grade.querySelectorAll("[data-favorito]").forEach(botao => {
+        botao.addEventListener("click", function() {
+            const nome = decodeURIComponent(this.dataset.favorito);
+            adicionarFavorito(nome);
+        });
+    });
+
+    // EVENTOS DOS BOTÕES DA SACOLA
+    grade.querySelectorAll("[data-sacola]").forEach(botao => {
+        botao.addEventListener("click", function() {
+            const nome = decodeURIComponent(this.dataset.sacola);
+
+            if (typeof adicionarSacola === "function") {
+                adicionarSacola(nome);
+            } else {
+                alert("Não foi possível acessar a sacola.");
+            }
+        });
     });
 }
 
@@ -112,7 +143,7 @@ function aplicarFiltros() {
     // FILTRO DE CATEGORIAS
     const categoriasSelecionadas = [
         ...document.querySelectorAll(
-            '.filtros input[type="checkbox"]:not([name="preco"]):checked'
+            '.filtros input[name="categoria"]:checked'
         )
     ].map(input => input.value);
 
@@ -150,22 +181,20 @@ function aplicarFiltros() {
         });
     }
 
-
     // FILTRO DE PESQUISA
-const campoBusca = document.getElementById("campo-busca");
+    const campoBusca = document.getElementById("campo-busca");
 
-if (campoBusca) {
-    const pesquisa = campoBusca.value
-        .toLocaleLowerCase("pt-BR")
-        .trim();
+    if (campoBusca) {
+        const pesquisa = normalizarTexto(campoBusca.value);
 
-    if (pesquisa) {
-        resultado = resultado.filter(produto =>
-            produto.nome.toLocaleLowerCase("pt-BR").includes(pesquisa) ||
-            produto.descricao.toLocaleLowerCase("pt-BR").includes(pesquisa)
-        );
+        if (pesquisa) {
+            resultado = resultado.filter(produto =>
+                normalizarTexto(produto.nome).includes(pesquisa) ||
+                normalizarTexto(produto.descricao).includes(pesquisa)
+            );
+        }
     }
-}
+
     // ORDENAÇÃO
     const ordenar = document.getElementById("ordenar");
 
@@ -202,6 +231,12 @@ function limparFiltros() {
         ordenar.value = "padrao";
     }
 
+    const campoBusca = document.getElementById("campo-busca");
+
+    if (campoBusca) {
+        campoBusca.value = "";
+    }
+
     aplicarFiltros();
 }
 
@@ -236,7 +271,7 @@ function adicionarFavorito(nome) {
 document.querySelectorAll(".filtros input").forEach(input => {
     input.addEventListener("change", function() {
 
-        // Permite apenas uma faixa de preço selecionada
+        // PERMITE APENAS UMA FAIXA DE PREÇO
         if (this.name === "preco" && this.checked) {
             document.querySelectorAll(
                 '.filtros input[name="preco"]'
@@ -247,7 +282,7 @@ document.querySelectorAll(".filtros input").forEach(input => {
             });
         }
 
-        // Permite apenas uma categoria selecionada
+        // PERMITE APENAS UMA CATEGORIA
         if (this.name === "categoria" && this.checked) {
             document.querySelectorAll(
                 '.filtros input[name="categoria"]'
@@ -269,33 +304,32 @@ if (seletorOrdenacao) {
     seletorOrdenacao.addEventListener("change", aplicarFiltros);
 }
 
-// INICIALIZAR
-mostrarProdutos(produtos);
-
-
 // FUNCIONAMENTO DA PESQUISA
 function configurarPesquisa() {
     const campoBusca = document.getElementById("campo-busca");
-    const formularioBusca = document.getElementById("search-form");
 
     if (!campoBusca || campoBusca.dataset.configurado) return;
 
     campoBusca.dataset.configurado = "true";
 
-    // Pesquisa enquanto digita
-    campoBusca.addEventListener("input", aplicarFiltros);
+    // RECUPERA A PESQUISA ENVIADA DE OUTRA PÁGINA
+    const parametros = new URLSearchParams(window.location.search);
+    const pesquisaAnterior = parametros.get("busca");
 
-    // Impede o formulário de recarregar a página
-    if (formularioBusca) {
-        formularioBusca.addEventListener("submit", function(event) {
-            event.preventDefault();
-            aplicarFiltros();
-        });
+    if (pesquisaAnterior) {
+        campoBusca.value = pesquisaAnterior;
+        aplicarFiltros();
     }
+
+    // PESQUISA ENQUANTO DIGITA
+    campoBusca.addEventListener("input", aplicarFiltros);
 }
 
-// Aguarda o cabeçalho carregar
+// AGUARDA O CABEÇALHO CARREGAR
 document.addEventListener("headerLoaded", configurarPesquisa);
 
-// Inicializa caso o campo já esteja disponível
+// INICIALIZA CASO O CAMPO JÁ ESTEJA DISPONÍVEL
 configurarPesquisa();
+
+// INICIALIZAR PRODUTOS
+mostrarProdutos(produtos);
