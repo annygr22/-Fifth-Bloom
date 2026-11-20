@@ -1,3 +1,4 @@
+
 /* ========================================
    CONFIGURAÇÕES DO LOGIN
 ======================================== */
@@ -14,10 +15,8 @@
 .frete-gratis {
     width: 100%;
     padding: 8px 10px;
-
     background: #1C1C1C;
     color: #FFFFFF;
-
     text-align: center;
     font-size: 11px;
     font-weight: 500;
@@ -57,7 +56,6 @@
 .logo-painel {
     width: 120px;
     height: auto;
-
     margin-bottom: 15px;
 }
 
@@ -68,6 +66,7 @@
 .painel-login {
     width: 100%;
     max-width: 480px;
+    box-sizing: border-box;
 
     padding: 30px 40px;
 
@@ -85,9 +84,7 @@
 .painel-login h1 {
     font-size: 28px;
     font-weight: 500;
-
     color: #1C1C1C;
-
     margin-bottom: 8px;
 }
 
@@ -99,26 +96,43 @@
 }
 
 /* ========================================
-   FORMULÁRIO
+   FORMULÁRIOS
+   LOGIN E CADASTRO
 ======================================== */
 
-#form-login {
+#form-login,
+#form-cadastro {
     display: flex;
     flex-direction: column;
+
+    width: 100%;
 
     text-align: left;
     margin-top: 25px;
 }
 
-#form-login label {
+/* LABELS */
+
+#form-login label,
+#form-cadastro label {
+    display: block;
+
     font-size: 13px;
+    font-weight: 500;
+
     margin-bottom: 8px;
 }
 
-#form-login input {
+/* CAMPOS DE ENTRADA */
+
+#form-login input,
+#form-cadastro input {
+    display: block;
+
     width: 100%;
     height: 45px;
 
+    box-sizing: border-box;
     padding: 0 14px;
 
     border: 1px solid #D5D5D5;
@@ -130,18 +144,23 @@
     font-size: 13px;
 
     outline: none;
+
+    margin-bottom: 15px;
 }
 
-#form-login input:focus {
+/* EFEITO AO CLICAR NO CAMPO */
+
+#form-login input:focus,
+#form-cadastro input:focus {
     border-color: #E8B4B8;
 }
 
-/* RECUPERAR E-MAIL */
+/* RECUPERAR SENHA */
 
 .recuperar {
     align-self: flex-end;
 
-    margin: 10px 0 22px;
+    margin: 0 0 22px;
 
     font-size: 12px;
     color: #686568;
@@ -150,7 +169,7 @@
 }
 
 /* ========================================
-   BOTÃO CONTINUAR
+   BOTÃO CONTINUAR / CRIAR CONTA
 ======================================== */
 
 .continuar {
@@ -178,6 +197,20 @@
 }
 
 /* ========================================
+   MENSAGENS DE ERRO E SUCESSO
+======================================== */
+
+#mensagem-login,
+#mensagem-cadastro {
+    font-size: 12px;
+    line-height: 1.5;
+
+    text-align: center;
+
+    margin: 5px 0 12px;
+}
+
+/* ========================================
    DIVISOR
 ======================================== */
 
@@ -192,7 +225,6 @@
 .divisor span {
     flex: 1;
     height: 1px;
-
     background: #BDBDBD;
 }
 
