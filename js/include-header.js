@@ -42,6 +42,29 @@ fetch("./components/header.html")
             });
         }
 
+        // PESQUISA GLOBAL
+        const formularioBusca = document.getElementById("search-form");
+        const campoBusca = document.getElementById("campo-busca");
+
+        if (formularioBusca && campoBusca) {
+            formularioBusca.addEventListener("submit", function(event) {
+                event.preventDefault();
+
+                const pesquisa = campoBusca.value.trim();
+
+                if (!pesquisa) return;
+
+                if (paginaAtual !== "produtos.html") {
+                    window.location.href =
+                        "produtos.html?busca=" + encodeURIComponent(pesquisa);
+                } else {
+                    campoBusca.dispatchEvent(new Event("input", {
+                        bubbles: true
+                    }));
+                }
+            });
+        }
+
         // Avisa que o cabeçalho terminou de carregar
         document.dispatchEvent(new Event("headerLoaded"));
     })
