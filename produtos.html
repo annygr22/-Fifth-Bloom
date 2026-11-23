@@ -24,7 +24,6 @@
     <!-- CABEÇALHO COMPARTILHADO -->
     <div id="header-container"></div>
 
-
     <!-- CONTEÚDO DA PÁGINA -->
     <main class="pagina-produtos">
 
@@ -38,7 +37,6 @@
 
         </section>
 
-
         <div class="conteudo-produtos">
 
             <!-- FILTROS LATERAIS -->
@@ -47,33 +45,31 @@
                 <h3>Categorias</h3>
 
                 <label>
-                    <input type="checkbox" value="skincare">
+                    <input type="checkbox" name="categoria" value="skincare">
                     Skincare
                 </label>
 
                 <label>
-                    <input type="checkbox" value="corpo">
+                    <input type="checkbox" name="categoria" value="corpo">
                     Corpo
                 </label>
 
                 <label>
-                    <input type="checkbox" value="maquiagem">
+                    <input type="checkbox" name="categoria" value="maquiagem">
                     Maquiagem
                 </label>
 
                 <label>
-                    <input type="checkbox" value="hidratantes">
+                    <input type="checkbox" name="categoria" value="hidratantes">
                     Hidratantes
                 </label>
 
                 <label>
-                    <input type="checkbox" value="mais-vendidos">
+                    <input type="checkbox" name="categoria" value="mais-vendidos">
                     Mais vendidos
                 </label>
 
-
                 <hr>
-
 
                 <h3>Preço</h3>
 
@@ -92,14 +88,12 @@
                     R$100+
                 </label>
 
-
                 <button class="limpar-filtros" type="button"
                     onclick="limparFiltros()">
                     LIMPAR FILTROS
                 </button>
 
             </aside>
-
 
             <!-- CATÁLOGO DE PRODUTOS -->
             <section class="catalogo">
@@ -117,7 +111,6 @@
 
                 </div>
 
-
                 <div class="grade-produtos" id="gradeProdutos">
 
                     <!-- Produtos inseridos pelo JavaScript -->
@@ -129,7 +122,6 @@
         </div>
 
     </main>
-
 
     <!-- RODAPÉ -->
     <footer class="rodape-home">
@@ -169,12 +161,11 @@
 
     </footer>
 
-
     <!-- JAVASCRIPT -->
     <script src="./js/include-header.js"></script>
     <script src="./js/script.js"></script>
     <script src="./js/produtos.js"></script>
-    <script src="./js/sacola.js"></script>>
+    <script src="./js/sacola.js"></script>
 
 </body>
 </html>

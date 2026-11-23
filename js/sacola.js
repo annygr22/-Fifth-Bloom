@@ -35,31 +35,55 @@ function formatarPreco(valor) {
     });
 }
 
+
 // Adiciona um produto à sacola
-function adicionarSacola(nome) {
+function adicionarSacola(nome, precoPersonalizado = null) {
+
     if (typeof produtos === "undefined") {
         alert("Não foi possível encontrar os produtos.");
         return;
     }
 
-    const produto = produtos.find(p => p.nome === nome);
+    // Compara nomes mesmo quando há diferenças de acentuação
+    const normalizarNome = texto =>
+        texto.normalize("NFD")
+             .replace(/[\u0300-\u036f]/g, "")
+             .toUpperCase()
+             .trim();
+
+    const produto = produtos.find(
+        p => normalizarNome(p.nome) === normalizarNome(nome)
+    );
 
     if (!produto) {
         alert("Produto não encontrado!");
         return;
     }
 
+    // Utiliza o preço personalizado quando informado
+    const precoFinal = precoPersonalizado !== null
+        ? precoPersonalizado
+        : produto.preco;
+
     let sacola = obterSacola();
 
-    const existente = sacola.find(p => p.nome === nome);
+    const existente = sacola.find(
+        p => normalizarNome(p.nome) === normalizarNome(nome)
+    );
 
     if (existente) {
+
         existente.quantidade++;
+
     } else {
+
         sacola.push({
             ...produto,
+            nome: nome,
+            preco: precoFinal,
             quantidade: 1
         });
+
     }
 
     salvarSacola(sacola);
