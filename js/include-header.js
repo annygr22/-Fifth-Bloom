@@ -7,27 +7,20 @@ fetch("./components/header.html")
 
         return response.text();
     })
-    .then(html => {
+    .then(async html => {
+
         const container = document.getElementById("header-container");
 
-        // Verifica se existe o espaço reservado para o cabeçalho
-        if (!container) {
-            console.error("O elemento #header-container não foi encontrado.");
-            return;
-        }
+        if (!container) return;
 
-        // Insere o cabeçalho na página
         container.innerHTML = html;
 
-        // Identifica a página atual
         const paginaAtual =
             window.location.pathname.split("/").pop() || "index.html";
 
-        // Destaca o link da página atual
+        // LINK DA PÁGINA ATUAL
         document.querySelectorAll(".main-nav .nav-link").forEach(link => {
-            const destino = link.getAttribute("href");
-
-            if (destino === paginaAtual) {
+            if (link.getAttribute("href") === paginaAtual) {
                 link.classList.add("active");
             }
         });
@@ -42,12 +35,12 @@ fetch("./components/header.html")
             });
         }
 
-        // PESQUISA GLOBAL
+        // PESQUISA
         const formularioBusca = document.getElementById("search-form");
         const campoBusca = document.getElementById("campo-busca");
 
         if (formularioBusca && campoBusca) {
-            formularioBusca.addEventListener("submit", function(event) {
+            formularioBusca.addEventListener("submit", event => {
                 event.preventDefault();
 
                 const pesquisa = campoBusca.value.trim();
@@ -58,14 +51,96 @@ fetch("./components/header.html")
                     window.location.href =
                         "produtos.html?busca=" + encodeURIComponent(pesquisa);
                 } else {
-                    campoBusca.dispatchEvent(new Event("input", {
-                        bubbles: true
-                    }));
+                    campoBusca.dispatchEvent(
+                        new Event("input", { bubbles: true })
+                    );
                 }
             });
         }
 
-        // Avisa que o cabeçalho terminou de carregar
+        // SUPABASE E PERFIL
+        try {
+            // O caminho é relativo a este arquivo, que está dentro de js
+            const { supabaseClient } = await import("./supabase.js");
+
+            const perfilLink = document.getElementById("perfil-link");
+            const perfilTexto = document.getElementById("perfil-texto");
+            const botaoSair = document.getElementById("sair-conta");
+
+            function atualizarPerfil(usuario) {
+
+                if (usuario) {
+
+                    const nomeCompleto =
+                        usuario.user_metadata?.full_name ||
+                        usuario.user_metadata?.name ||
+                        usuario.email?.split("@")[0] ||
+                        "usuário";
+
+                    const primeiroNome = nomeCompleto
+                        .trim()
+                        .split(/\s+/)[0];
+
+                    perfilTexto.textContent = `Olá, ${primeiroNome}!`;
+
+                    // Impede que o usuário clique e volte à tela de login
+                    perfilLink.href = "index.html";
+
+                    botaoSair.hidden = false;
+
+                } else {
+
+                    perfilTexto.textContent = "PERFIL";
+                    perfilLink.href = "login.html";
+                    botaoSair.hidden = true;
+
+                }
+            }
+
+            // VERIFICA A SESSÃO ATUAL
+            const { data, error } =
+                await supabaseClient.auth.getSession();
+
+            if (error) throw error;
+
+            atualizarPerfil(data.session?.user || null);
+
+            // OBSERVA MUDANÇAS NA SESSÃO
+            supabaseClient.auth.onAuthStateChange((evento, session) => {
+                atualizarPerfil(session?.user || null);
+            });
+
+            // SAIR DA CONTA
+            botaoSair.addEventListener("click", async () => {
+
+                botaoSair.disabled = true;
+                botaoSair.textContent = "Saindo...";
+
+                try {
+                    const { error } =
+                        await supabaseClient.auth.signOut();
+
+                    if (error) throw error;
+
+                    atualizarPerfil(null);
+
+                    window.location.href = "index.html";
+
+                } catch (erro) {
+
+                    console.error("Erro ao sair:", erro);
+
+                    alert("Não foi possível sair da conta.");
+
+                    botaoSair.disabled = false;
+                    botaoSair.textContent = "Sair";
+                }
+            });
+
+        } catch (erro) {
+            console.error("Erro ao conectar o perfil:", erro);
+        }
+
         document.dispatchEvent(new Event("headerLoaded"));
     })
     .catch(erro => {

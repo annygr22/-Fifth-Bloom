@@ -1,19 +1,16 @@
 
 <header class="header">
 
-    <!-- FAIXA DE FRETE -->
     <div class="barra-frete">
-        FRETE GRÁTIS NAS COMPRAS ACIMA DE R$ 150,00
+        FRETE GRÁTIS NAS COMPRAS ACIMA DE R$ 149,99
     </div>
 
     <div class="header-container">
 
-        <!-- LOGO -->
         <a href="index.html" class="logo">
             <img src="assets/logo_Fifth_Blom.png" alt="Logo Fifth Bloom">
         </a>
 
-        <!-- NAVEGAÇÃO -->
         <nav class="main-nav" id="main-nav">
             <a href="index.html" class="nav-link">Início</a>
             <a href="produtos.html" class="nav-link">Produtos</a>
@@ -23,7 +20,6 @@
             <a href="favoritos.html" class="nav-link">Favoritos</a>
         </nav>
 
-        <!-- AÇÕES -->
         <div class="header-actions">
 
             <!-- PESQUISA -->
@@ -47,19 +43,38 @@
             <a href="sacola.html" class="icon-link sacola-link"
                aria-label="Sacola de compras">
 
-                <img src="assets/Ícone Minimalista de Sacola de Compras.png"
-                     alt="" class="header-icon">
+                <img
+                    src="assets/Ícone Minimalista de Sacola de Compras.png"
+                    alt=""
+                    class="header-icon"
+                >
 
                 <span class="contador-sacola" id="contador-sacola">0</span>
             </a>
 
             <!-- PERFIL -->
-            <a href="login.html" class="profile-link">
-                <img src="assets/Ícone de perfil minimalista azul-acinzentado.png"
-                     alt="" class="header-icon profile-icon">
+            <div class="area-perfil">
 
-                <span>PERFIL</span>
-            </a>
+                <a href="login.html" class="profile-link" id="perfil-link">
+                    <img
+                        src="assets/Ícone de perfil minimalista azul-acinzentado.png"
+                        alt=""
+                        class="header-icon profile-icon"
+                    >
+
+                    <span id="perfil-texto">PERFIL</span>
+                </a>
+
+                <button
+                    type="button"
+                    id="sair-conta"
+                    class="sair-conta"
+                    hidden
+                >
+                    Sair
+                </button>
+
+            </div>
 
             <!-- MENU HAMBÚRGUER -->
             <button class="hamburguer" id="btn-menu">☰</button>

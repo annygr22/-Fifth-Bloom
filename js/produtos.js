@@ -26,7 +26,7 @@ const produtos = [
         descricao: "Máscara para cílios com acabamento sofisticado.",
         preco: 65.90,
         categoria: "maquiagem",
-        imagem: "assets/MÁSCARA FLEURS D'OR.png"
+        imagem: "assets/MÁSCARA FLEURS D_OR.png"
     },
     {
         nome: "CREME BLOOM SUPREME",

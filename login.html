@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -18,7 +19,7 @@
 
 <body>
 
-   <!-- CABEÇALHO COMPARTILHADO -->
+    <!-- CABEÇALHO COMPARTILHADO -->
     <div id="header-container"></div>
 
     <!-- ÁREA DE LOGIN -->
@@ -38,7 +39,7 @@
 
                 <h1>Olá!</h1>
 
-                <p>Para continuar, digite seu e-mail</p>
+                <p>Para continuar, digite seu e-mail e sua senha</p>
 
                 <form id="form-login">
 
@@ -48,15 +49,28 @@
                         type="email"
                         id="email"
                         placeholder="Digite seu e-mail"
+                        autocomplete="email"
                         required
                     >
 
+                    <label for="senha">Senha:</label>
+
+                    <input
+                        type="password"
+                        id="senha"
+                        placeholder="Digite sua senha"
+                        autocomplete="current-password"
+                        required
+                    >
+
+                    <p id="mensagem-login" aria-live="polite"></p>
+
                     <a href="recuperar-senha.html" class="recuperar">
-                        Esqueci meu e-mail
+                        Esqueci minha senha
                     </a>
 
                     <button type="submit" class="continuar">
-                        CONTINUAR
+                        ENTRAR
                     </button>
 
                 </form>
