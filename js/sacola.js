@@ -1,4 +1,5 @@
 
+import { supabaseClient } from "./supabase.js";
 const CHAVE_SACOLA = "fifthBloomCarrinho";
 
 // Busca os produtos salvos
@@ -232,7 +233,7 @@ document.addEventListener("click", function(event) {
     atualizarContadorSacola();
 });
 
-// Botão de finalizar compra demonstrativo
+// Botão de finalizar compra
 document.addEventListener("DOMContentLoaded", function() {
     mostrarSacola();
     atualizarContadorSacola();
@@ -240,12 +241,30 @@ document.addEventListener("DOMContentLoaded", function() {
     const botaoFinalizar = document.getElementById("botao-finalizar");
 
     if (botaoFinalizar) {
-        botaoFinalizar.addEventListener("click", function() {
-            alert("Finalização demonstrativa! Sua sacola está funcionando.");
+        botaoFinalizar.addEventListener("click", async function() {
+
+            const { data, error } =
+                await supabaseClient.auth.getSession();
+
+            if (error) {
+                alert("Não foi possível verificar seu login.");
+                return;
+            }
+
+            if (data.session) {
+                alert(
+                    "FIFTH BLOOM\n\n" +
+                    "✓ Compra demonstrativa!\n\n" +
+                    "Nenhum pedido ou pagamento real foi realizado."
+                );
+            } else {
+                localStorage.setItem("retornoCheckout", "true");
+                window.location.href = "login.html";
+            }
+
         });
     }
 });
-
 // Atualiza o contador quando o cabeçalho termina de carregar
 document.addEventListener("headerLoaded", function() {
     atualizarContadorSacola();

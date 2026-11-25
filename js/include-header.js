@@ -140,7 +140,23 @@ fetch("./components/header.html")
         } catch (erro) {
             console.error("Erro ao conectar o perfil:", erro);
         }
+        // ATUALIZA A QUANTIDADE DE PRODUTOS NA SACOLA
+        const CHAVE_SACOLA = "fifthBloomCarrinho";
 
+        const sacola = JSON.parse(
+            localStorage.getItem(CHAVE_SACOLA)
+        ) || [];
+
+        const quantidade = sacola.reduce(
+            (total, produto) => total + produto.quantidade,
+            0
+        );
+
+        const contadorSacola = document.getElementById("contador-sacola");
+
+        if (contadorSacola) {
+            contadorSacola.textContent = quantidade;
+        }
         document.dispatchEvent(new Event("headerLoaded"));
     })
     .catch(erro => {

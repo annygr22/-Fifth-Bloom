@@ -11,6 +11,14 @@ function mostrarMensagem(texto) {
     }
 }
 
+// VERIFICA PARA ONDE O USUÁRIO DEVE IR
+function obterDestino() {
+    const veioDoCheckout =
+        localStorage.getItem("retornoCheckout") === "true";
+
+    return veioDoCheckout ? "./sacola.html" : "./index.html";
+}
+
 // LOGIN COM E-MAIL E SENHA
 if (formularioLogin) {
     formularioLogin.addEventListener("submit", async (event) => {
@@ -47,7 +55,7 @@ if (formularioLogin) {
 
             mostrarMensagem("Login realizado com sucesso!");
 
-            window.location.href = "./index.html";
+            window.location.href = obterDestino();
 
         } catch (erro) {
             console.error("ERRO REAL NO LOGIN:", erro);
@@ -79,7 +87,7 @@ if (botaoGoogle) {
                     provider: "google",
                     options: {
                         redirectTo: new URL(
-                            "./index.html",
+                            obterDestino(),
                             window.location.href
                         ).href
                     }
@@ -89,7 +97,9 @@ if (botaoGoogle) {
 
         } catch (erro) {
             console.error("ERRO NO LOGIN GOOGLE:", erro);
-            mostrarMensagem("Erro ao entrar com Google: " + erro.message);
+            mostrarMensagem(
+                "Erro ao entrar com Google: " + erro.message
+            );
         }
     });
 }

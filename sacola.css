@@ -313,3 +313,90 @@
         padding: 20px;
     }
 }
+
+/* CONFIRMAÇÃO DE COMPRA */
+
+.confirmacao-compra[hidden] {
+    display: none;
+}
+
+.confirmacao-compra {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.55);
+}
+
+.conteudo-confirmacao {
+    width: 100%;
+    max-width: 420px;
+    padding: 40px 30px;
+    background: #fff;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.15);
+    animation: aparecerConfirmacao 0.3s ease;
+}
+
+.icone-confirmacao {
+    width: 75px;
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 22px;
+    border-radius: 50%;
+    background: #e5f3e8;
+    color: #438b55;
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.conteudo-confirmacao h2 {
+    color: #1c1c1c;
+    font-size: 21px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.conteudo-confirmacao p {
+    color: #777;
+    font-size: 12px;
+    line-height: 1.8;
+    margin-bottom: 10px;
+}
+
+#fechar-confirmacao {
+    width: 100%;
+    padding: 14px;
+    margin-top: 20px;
+    border: none;
+    background: #1c1c1c;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 10px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#fechar-confirmacao:hover {
+    background: #e8b4b8;
+    color: #1c1c1c;
+}
+
+@keyframes aparecerConfirmacao {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
