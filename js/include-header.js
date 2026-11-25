@@ -60,6 +60,7 @@ fetch("./components/header.html")
 
         // SUPABASE E PERFIL
         try {
+
             // O caminho é relativo a este arquivo, que está dentro de js
             const { supabaseClient } = await import("./supabase.js");
 
@@ -83,8 +84,8 @@ fetch("./components/header.html")
 
                     perfilTexto.textContent = `Olá, ${primeiroNome}!`;
 
-                    // Impede que o usuário clique e volte à tela de login
-                    perfilLink.href = "index.html";
+                    // DIRECIONA PARA A PÁGINA DE PERFIL
+                    perfilLink.href = "perfil.html";
 
                     botaoSair.hidden = false;
 
@@ -117,6 +118,7 @@ fetch("./components/header.html")
                 botaoSair.textContent = "Saindo...";
 
                 try {
+
                     const { error } =
                         await supabaseClient.auth.signOut();
 
@@ -138,10 +140,13 @@ fetch("./components/header.html")
             });
 
         } catch (erro) {
+
             console.error("Erro ao conectar o perfil:", erro);
+
         }
 
         document.dispatchEvent(new Event("headerLoaded"));
+
     })
     .catch(erro => {
         console.error("Erro ao carregar o cabeçalho:", erro);
