@@ -68,7 +68,25 @@
                 <button class="botao-finalizar" id="botao-finalizar">
                     FINALIZAR COMPRA
                 </button>
+                <div id="confirmacao-compra" class="confirmacao-compra" hidden>
+                    <div class="conteudo-confirmacao">
+                        <div class="icone-confirmacao">✓</div>
 
+                        <h2>Compra demonstrativa!</h2>
+
+                        <p>
+                            Sua demonstração foi finalizada com sucesso.
+                        </p>
+
+                        <p>
+                            Nenhum pedido ou pagamento real foi realizado.
+                        </p>
+
+                        <button id="fechar-confirmacao" type="button">
+                            CONTINUAR
+                        </button>
+                    </div>
+                </div>
                 <p class="aviso-checkout">
                     Ambiente demonstrativo para projeto acadêmico.
                 </p>
@@ -83,7 +101,7 @@
     </footer>
 
     <script src="./js/include-header.js"></script>
-    <script src="./js/sacola.js"></script>
+    <script type="module" src="./js/sacola.js"></script>
 
 </body>
 </html>
