@@ -1,0 +1,279 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Meu Perfil | Fifth Bloom</title>
+
+    <link rel="stylesheet" href="style.css">>
+    <link rel="stylesheet" href="perfil.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- CABEÇALHO -->
+    <div id="header-container"></div>
+
+    <main class="perfil-page">
+
+        <!-- MENU LATERAL -->
+        <aside class="perfil-sidebar">
+
+            <div class="sidebar-boas-vindas">
+                <span class="sidebar-laco">♡</span>
+                <p>Olá,</p>
+                <h1 id="boas-vindas">Floresça!</h1>
+                <span class="sidebar-frase">
+                    Que bom ter você por aqui!
+                </span>
+                <div class="sidebar-divisor">୨୧</div>
+            </div>
+
+            <nav class="perfil-menu">
+
+                <button class="menu-perfil ativo" data-aba="dados">
+                    <span>♙</span> Meu Perfil
+                </button>
+
+                <button class="menu-perfil" data-aba="pedidos">
+                    <span>▢</span> Meus Pedidos
+                </button>
+
+                <button class="menu-perfil" data-aba="favoritos">
+                    <span>♡</span> Meus Favoritos
+                </button>
+
+                <button class="menu-perfil" data-aba="cupons">
+                    <span>♧</span> Meus Cupons
+                </button>
+
+                <button class="menu-perfil" data-aba="avaliacoes">
+                    <span>☆</span> Minhas Avaliações
+                </button>
+
+                <button class="menu-perfil" data-aba="configuracoes">
+                    <span>⚙</span> Configurações
+                </button>
+
+            </nav>
+
+            <div class="sidebar-final">
+                <span>♡ ୨୧ ♡</span>
+                <p>Sonhe. Compre. Floresça.</p>
+            </div>
+
+        </aside>
+
+
+        <!-- CONTEÚDO PRINCIPAL -->
+        <section class="perfil-conteudo">
+
+            <div class="perfil-titulo">
+                <h2>Meu Perfil</h2>
+                <span></span>
+            </div>
+
+
+            <!-- DADOS DO USUÁRIO -->
+            <section class="perfil-identificacao">
+
+                <div class="perfil-foto-container">
+                    <img
+                        src="./assets/Ícone de perfil minimalista azul-acinzentado.png"
+                        alt="Foto do perfil"
+                        id="foto-perfil"
+                    >
+                </div>
+
+                <div class="perfil-identificacao-info">
+
+                    <h2 id="nome-usuario">Carregando...</h2>
+
+                    <p id="email-usuario">Carregando e-mail...</p>
+
+                    <span class="membro-desde">
+                        ♡ Membro desde
+                        <strong id="data-cadastro">--</strong>
+                    </span>
+
+                </div>
+
+                <button class="btn-editar" id="btn-editar">
+                    ✎ Editar Perfil
+                </button>
+
+            </section>
+
+
+            <!-- FORMULÁRIO DE EDIÇÃO -->
+            <form id="form-editar-perfil" class="form-editar" hidden>
+
+                <h3>Editar informações</h3>
+
+                <label for="novo-nome">Nome de exibição</label>
+
+                <input
+                    type="text"
+                    id="novo-nome"
+                    maxlength="60"
+                    placeholder="Digite seu nome"
+                    required
+                >
+
+                <div class="editar-acoes">
+                    <button type="button" id="cancelar-edicao">
+                        Cancelar
+                    </button>
+
+                    <button type="submit" id="salvar-perfil">
+                        Salvar alterações
+                    </button>
+                </div>
+
+                <p id="mensagem-edicao"></p>
+
+            </form>
+
+
+            <!-- ESTATÍSTICAS -->
+            <div class="perfil-estatisticas">
+
+                <div class="estatistica">
+                    <span>▢</span>
+                    <strong id="total-pedidos">0</strong>
+                    <p>Pedidos</p>
+                </div>
+
+                <div class="estatistica">
+                    <span>♡</span>
+                    <strong id="total-favoritos">0</strong>
+                    <p>Favoritos</p>
+                </div>
+
+                <div class="estatistica">
+                    <span>☆</span>
+                    <strong id="total-avaliacoes">0</strong>
+                    <p>Avaliações</p>
+                </div>
+
+            </div>
+
+
+            <!-- ABAS -->
+            <nav class="perfil-abas">
+
+                <button class="aba-perfil ativa" data-aba="pedidos">
+                    ▢ Meus Pedidos
+                </button>
+
+                <button class="aba-perfil" data-aba="favoritos">
+                    ♡ Meus Favoritos
+                </button>
+
+                <button class="aba-perfil" data-aba="cupons">
+                    ♧ Meus Cupons
+                </button>
+
+                <button class="aba-perfil" data-aba="avaliacoes">
+                    ☆ Minhas Avaliações
+                </button>
+
+            </nav>
+
+
+            <!-- ÁREA DAS ABAS -->
+            <section class="perfil-painel">
+
+                <div class="painel-conteudo" id="painel-conteudo">
+
+                    <div class="painel-titulo">
+                        <h3>Histórico de Pedidos</h3>
+                    </div>
+
+                    <div class="estado-vazio">
+                        <span>♡</span>
+                        <h4>Seus pedidos aparecerão aqui</h4>
+                        <p>
+                            Assim que você realizar uma compra,
+                            poderá acompanhar seus pedidos por aqui.
+                        </p>
+                        <a href="produtos.html">Conhecer produtos</a>
+                    </div>
+
+                </div>
+
+            </section>
+
+        </section>
+
+
+        <!-- RESUMO DA CONTA -->
+        <aside class="perfil-resumo">
+
+            <div class="resumo-card">
+
+                <h3>✧ Resumo da Conta</h3>
+
+                <div class="resumo-item">
+                    <span>✉</span>
+                    <p id="resumo-email">Carregando...</p>
+                </div>
+
+                <div class="resumo-item">
+                    <span>▦</span>
+                    <p id="resumo-data">Membro desde: --</p>
+                </div>
+
+                <div class="resumo-item">
+                    <span>♡</span>
+                    <p>Fifth Bloom</p>
+                </div>
+
+                <div class="resumo-divisor"></div>
+
+                <div class="resumo-mensagem">
+                    <span>🎀</span>
+                    <div>
+                        <strong>Um mundo feito para você!</strong>
+                        <p>Descubra nossos produtos e novidades.</p>
+                    </div>
+                </div>
+
+                <a href="produtos.html" class="btn-conhecer">
+                    Conhecer a loja →
+                </a>
+
+            </div>
+
+            <div class="perfil-banner">
+                <p>Obrigada por fazer parte da nossa história!</p>
+                <span>♡</span>
+                <strong>FIFTH BLOOM</strong>
+                <small>BOOKS • STYLE • MORE</small>
+            </div>
+
+        </aside>
+
+    </main>
+
+
+    <!-- RODAPÉ -->
+    <footer class="perfil-rodape">
+        <strong>FIFTH BLOOM</strong>
+        <span>Sonhe. Compre. Floresça ♡</span>
+        <p>© 2026 Fifth Bloom. Todos os direitos reservados.</p>
+    </footer>
+
+
+    <!-- SCRIPTS -->
+    <script type="module" src="js/include-header.js"></script>
+    <script type="module" src="js/perfil.js"></script>
+
+</body>
+</html>
